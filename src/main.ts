@@ -6,7 +6,11 @@ import * as express from 'express';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
-
+  app.enableCors({
+    origin: '*',
+    methods: 'GET, PUT, POST, DELETE',
+    allowedHeaders: 'Content-Type, Authorization',
+  });
   app.use('/public', express.static(join(__dirname, '..', 'public')));
   app.useGlobalPipes(
     new ValidationPipe({
