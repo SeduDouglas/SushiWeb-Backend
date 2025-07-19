@@ -35,12 +35,6 @@ export class OrderService {
         );
       }
 
-      if (!menuItem.available) {
-        throw new BadRequestException(
-          `Item "${menuItem.name}" não está disponível no momento`,
-        );
-      }
-
       const itemTotal = menuItem.price * item.quantity;
       totalAmount += itemTotal;
 

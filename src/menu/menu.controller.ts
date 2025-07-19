@@ -7,16 +7,9 @@ export class MenuController {
   constructor(private readonly menuService: MenuService) {}
 
   @Get()
-  getMenu(
-    @Query('category') category?: string,
-    @Query('available') available?: string,
-  ): MenuItem[] {
+  getMenu(@Query('category') category?: string): MenuItem[] {
     if (category) {
       return this.menuService.getMenuItemsByCategory(category);
-    }
-
-    if (available === 'true') {
-      return this.menuService.getAvailableMenuItems();
     }
 
     return this.menuService.getAllMenuItems();

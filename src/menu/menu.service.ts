@@ -6,50 +6,87 @@ export class MenuService {
   private menuItems: MenuItem[] = [
     {
       id: 1,
-      name: 'Hambúrguer Clássico',
-      description:
-        'Hambúrguer artesanal com queijo, alface, tomate e molho especial',
+      name: 'Sushi Salmão',
+      image: '/public/img1.jpg',
       price: 25.9,
-      category: 'Hambúrgueres',
-      available: true,
-      image: '/images/hamburger-classic.jpg',
+      category: 'Sushi',
     },
     {
       id: 2,
-      name: 'Pizza Margherita',
-      description:
-        'Pizza tradicional com molho de tomate, mussarela e manjericão',
-      price: 32.5,
-      category: 'Pizzas',
-      available: true,
-      image: '/images/pizza-margherita.jpg',
+      name: 'Temaki Atum',
+      image: '/public/img2.jpg',
+      price: 19.9,
+      category: 'Temaki',
     },
     {
       id: 3,
-      name: 'Salada Caesar',
-      description: 'Alface romana, croutons, parmesão e molho caesar',
-      price: 18.9,
-      category: 'Saladas',
-      available: true,
-      image: '/images/caesar-salad.jpg',
+      name: 'Guioza Vegetariano',
+      image: '/public/img9.jpg',
+      price: 14.9,
+      category: 'Entrada',
     },
     {
       id: 4,
-      name: 'Refrigerante Lata',
-      description: 'Coca-Cola, Pepsi, Guaraná ou Sprite - 350ml',
-      price: 5.5,
-      category: 'Bebidas',
-      available: true,
-      image: '/images/soda-can.jpg',
+      name: 'Sashimi Salmão',
+      image: '/public/img4.jpg',
+      price: 29.9,
+      category: 'Sushi',
     },
     {
       id: 5,
-      name: 'Batata Frita',
-      description: 'Porção de batata frita crocante temperada',
-      price: 12.9,
-      category: 'Acompanhamentos',
-      available: false,
-      image: '/images/french-fries.jpg',
+      name: 'Temaki Camarão',
+      image: '/public/img5.jpg',
+      price: 22.5,
+      category: 'Temaki',
+    },
+    {
+      id: 6,
+      name: 'Hot Roll',
+      image: '/public/img6.jpg',
+      price: 18.0,
+      category: 'Sushi',
+    },
+    {
+      id: 7,
+      name: 'Sunomono',
+      image: '/public/img7.jpg',
+      price: 9.9,
+      category: 'Entrada',
+    },
+    {
+      id: 8,
+      name: 'Missoshiro',
+      image: '/public/img8.jpg',
+      price: 7.5,
+      category: 'Entrada',
+    },
+    {
+      id: 9,
+      name: 'Tempurá de Legumes',
+      image: '/public/img3.jpg',
+      price: 12.0,
+      category: 'Entrada',
+    },
+    {
+      id: 10,
+      name: 'Mochi (Doce de Arroz)',
+      image: '/public/img10.jpg',
+      price: 11.9,
+      category: 'Sobremesa',
+    },
+    {
+      id: 11,
+      name: 'Refrigerante Lata',
+      image: '/public/img_soda.jpg',
+      price: 6.0,
+      category: 'Bebida',
+    },
+    {
+      id: 12,
+      name: 'Chá Verde Gelado',
+      image: '/public/chá_gelado.jpg',
+      price: 5.5,
+      category: 'Bebida',
     },
   ];
 
@@ -57,15 +94,9 @@ export class MenuService {
     return this.menuItems;
   }
 
-  getAvailableMenuItems(): MenuItem[] {
-    return this.menuItems.filter((item) => item.available);
-  }
-
   getMenuItemsByCategory(category: string): MenuItem[] {
     return this.menuItems.filter(
-      (item) =>
-        item.category.toLowerCase() === category.toLowerCase() &&
-        item.available,
+      (item) => item.category.toLowerCase() === category.toLowerCase(),
     );
   }
 
