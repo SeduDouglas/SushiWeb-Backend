@@ -1,5 +1,5 @@
 export class OrderItem {
-  menuItemId: number;
+  menuItemId: string;
   menuItemName: string;
   quantity: number;
   unitPrice: number;

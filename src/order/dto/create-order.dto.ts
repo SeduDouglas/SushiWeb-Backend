@@ -12,7 +12,7 @@ import { Type } from 'class-transformer';
 export class OrderItemDto {
   @IsNumber()
   @IsNotEmpty()
-  menuItemId: number;
+  menuItemId: string;
 
   @IsNumber()
   @Min(1)
