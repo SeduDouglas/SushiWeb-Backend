@@ -1,8 +1,8 @@
 {
   "name": "sushi-web-backend",
   "version": "0.0.1",
-  "description": "",
-  "author": "",
+  "description": "Backend da aplicação Sushi Web",
+  "author": "Sushi Squad 6",
   "private": true,
   "license": "UNLICENSED",
   "scripts": {

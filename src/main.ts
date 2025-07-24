@@ -6,12 +6,27 @@ import * as express from 'express';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule);
+
+  const allowedOrigins = [
+    'https://sushi-web-dusky.vercel.app',
+    'http://localhost:3000',
+  ];
+
   app.enableCors({
-    origin: '*',
+    origin: (origin, callback) => {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: 'GET, PUT, POST, DELETE',
     allowedHeaders: 'Content-Type, Authorization',
+   // credentials: true,
   });
+
   app.use('/public', express.static(join(__dirname, '..', 'public')));
+
   app.useGlobalPipes(
     new ValidationPipe({
       whitelist: true,
@@ -20,6 +35,6 @@ async function bootstrap() {
     }),
   );
 
-  await app.listen(process.env.PORT ?? 3000);
+  await app.listen(process.env.PORT ?? 3001);
 }
 bootstrap();
