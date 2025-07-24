@@ -13,6 +13,7 @@ describe('MenuController', () => {
       image: '/public/img1.jpg',
       price: 25.9,
       category: 'Sushi',
+      description: 'Lorem ispum dollor',
     },
     {
       id: '2',
@@ -20,6 +21,7 @@ describe('MenuController', () => {
       image: '/public/img2.jpg',
       price: 19.9,
       category: 'Temaki',
+      description: 'Lorem ispum dollor',
     },
   ];
 
@@ -66,6 +68,7 @@ describe('MenuController', () => {
         image: '/public/img1.jpg',
         price: 25.9,
         category: 'Sushi',
+        description: 'Lorem ispum dollor',
       },
     ]);
   });
