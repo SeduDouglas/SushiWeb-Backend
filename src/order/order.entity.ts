@@ -22,5 +22,6 @@ export class Order {
     | 'delivered'
     | 'cancelled';
   createdAt: Date;
+  updatedAt: Date;
   observations?: string;
 }
